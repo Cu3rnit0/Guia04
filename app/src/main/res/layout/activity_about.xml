@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back">
+
+    <!-- Logo de la aplicación -->
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/logoapk"
+        app:layout_constraintBottom_toTopOf="@+id/developerTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="32dp" />  <!-- Margen entre el logo y el siguiente texto -->
+
+    <!-- Nombre del desarrollador -->
+    <TextView
+        android:id="@+id/developerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/developer_name"
+        android:textSize="18sp"
+        android:textColor="@color/grayDark"
+        app:layout_constraintBottom_toTopOf="@id/codigoTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="8dp" />  <!-- Margen entre los textos -->
+
+    <!-- Código del desarrollador -->
+    <TextView
+        android:id="@+id/codigoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/developer_code"
+        android:textSize="18sp"
+        android:textColor="@color/grayDark"
+        app:layout_constraintBottom_toTopOf="@id/companyTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="8dp" />  <!-- Margen entre los textos -->
+
+    <!-- Nombre de la empresa -->
+    <TextView
+        android:id="@+id/companyTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/company_name"
+        android:textSize="18sp"
+        android:textColor="@color/grayDark"
+        app:layout_constraintBottom_toTopOf="@id/versionTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="8dp" />  <!-- Margen entre los textos -->
+
+    <!-- Versión de la aplicación -->
+    <TextView
+        android:id="@+id/versionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_version"
+        android:textSize="18sp"
+        android:textColor="@color/grayDark"
+        app:layout_constraintTop_toBottomOf="@id/companyTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

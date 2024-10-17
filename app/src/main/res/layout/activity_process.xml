@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+  <Button
+      android:id="@+id/russianMultiplicationButton"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Multiplicación Rusa"
+      android:layout_marginTop="16dp"/>
+
+  <Button
+      android:id="@+id/primeNumberButton"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Número Primo"/>
+
+  <Button
+      android:id="@+id/palindromeButton"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Palíndromo"/>
+
+  <Button
+      android:id="@+id/aboutButton"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Acerca de"/>
+</LinearLayout>

@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">Guia0.1</string>
+    <string name="developer_name">Desarrollador: Ernesto Calzadilla</string>
+    <string name="developer_code">Código: CG19i04001</string>
+    <string name="company_name">QuickPrograms</string>
+    <string name="app_version">Versión: 1.0.0</string>
+
+    <!-- Variables relacionadas al login -->
+    <string name="login_title">Iniciar sesión</string>
+    <string name="username_hint">Usuario</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="show_password">Mostrar contraseña</string>
+    <string name="login_button">Iniciar sesión</string>
+
+    <!-- Mensajes de error y éxito -->
+    <string name="empty_fields_error">Por favor, ingresa el usuario y la contraseña</string>
+    <string name="login_success">Iniciando sesión...</string>
+    <string name="invalid_credentials_error">Usuario o contraseña incorrectos</string>
+
+    <!-- Otros -->
+    <string name="forgot_password">¿Olvidaste tu contraseña?</string>
+    <string name="welcome_message">Bienvenido a la aplicación</string>
+
+    <!-- Strings para ProcessActivity -->
+    <string name="russian_multiplication_button">Multiplicación Rusa</string>
+    <string name="prime_number_button">Número Primo</string>
+    <string name="palindrome_button">Palíndromo</string>
+    <string name="about_button">Acerca de</string>
+
+    <!-- Mensajes para actividades relacionadas -->
+    <string name="russian_multiplication_title">Multiplicación Rusa</string>
+    <string name="prime_number_title">Número Primo</string>
+    <string name="palindrome_title">Palíndromo</string>
+    <string name="about_title">Acerca de</string>
+    <!-- Mensajes de error y éxito -->
+
+    <string name="empty_text_error">Por favor, ingresa un texto.</string>
+    <string name="text_hint">Ingrese un texto</string>
+    <string name="palindrome_message">\"%1$s\" es un palíndromo.</string>
+    <string name="not_palindrome_message">\"%1$s\" no es un palíndromo.</string>
+    <string name="check_button">Verificar</string>
+
+    <!-- Nueva cadena para el número primo -->
+    <string name="number_hint">Ingrese un número</string>
+    <string name="empty_number_error">Por favor, ingresa un número.</string>
+    <string name="prime_number_message">El número %1$d es primo.</string>
+    <string name="not_prime_number_message">El número %1$d no es primo.</string>
+</resources>

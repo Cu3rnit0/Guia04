@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Colores básicos -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Colores personalizados -->
+    <color name="primaryColor">#6200EE</color> <!-- Color primario, usado en elementos principales de la app -->
+    <color name="primaryDarkColor">#3700B3</color> <!-- Variante más oscura del color primario -->
+    <color name="accentColor">#03DAC5</color> <!-- Color de acento -->
+    <color name="backgroundColor">#F5F5F5</color> <!-- Color de fondo general -->
+    <color name="textColorPrimary">#212121</color> <!-- Color de texto primario -->
+    <color name="textColorSecondary">#757575</color> <!-- Color de texto secundario -->
+    <color name="GraundColor">#EDF2F4</color>
+
+
+    <!-- Colores de botones -->
+    <color name="buttonColorPrimary">#FF6F00</color> <!-- Color de fondo de botones principales -->
+    <color name="buttonTextColorPrimary">#FFFFFF</color> <!-- Color del texto de los botones principales -->
+
+    <!-- Colores de alerta -->
+    <color name="errorColor">#B00020</color> <!-- Color usado para mensajes de error -->
+    <color name="warningColor">#FFA000</color> <!-- Color de advertencias -->
+    <color name="successColor">#4CAF50</color> <!-- Color para mensajes de éxito -->
+
+    <!-- Otros colores útiles -->
+    <color name="grayLight">#E0E0E0</color>
+    <color name="grayDark">#424242</color>
+    <color name="blueLight">#42A5F5</color>
+    <color name="greenLight">#66BB6A</color>
+</resources>
