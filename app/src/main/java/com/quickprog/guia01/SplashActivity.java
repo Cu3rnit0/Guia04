@@ -1,4 +1,3 @@
-// SplashActivity.java
 package com.quickprog.guia01;
 
 import android.content.Intent;
