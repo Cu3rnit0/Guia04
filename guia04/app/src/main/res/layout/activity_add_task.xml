@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/black"
+    tools:context=".AddTaskActivity">
+
+    <!-- Campo de título -->
+    <EditText
+        android:id="@+id/edtTitulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Título"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:padding="10dp"
+        android:backgroundTint="@color/white"
+        android:inputType="textCapWords"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Campo de descripción -->
+    <EditText
+        android:id="@+id/edtDescripcion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Descripción"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:padding="10dp"
+        android:backgroundTint="@color/white"
+        android:inputType="textMultiLine"
+        app:layout_constraintTop_toBottomOf="@id/edtTitulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Campo de Fecha con botón -->
+    <EditText
+        android:id="@+id/edtFecha"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Fecha"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:padding="10dp"
+        android:backgroundTint="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/edtDescripcion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnFecha"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btnFecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/design_default_color_error"
+        android:text="Seleccionar fecha"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@id/edtFecha"
+        app:layout_constraintTop_toBottomOf="@id/edtDescripcion"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Campo de Hora con botón -->
+    <EditText
+        android:id="@+id/edtHora"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Hora"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:padding="10dp"
+        android:backgroundTint="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/edtFecha"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnHora"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btnHora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/design_default_color_error"
+        android:text="Seleccionar hora"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@id/edtHora"
+        app:layout_constraintTop_toBottomOf="@id/edtFecha"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Botón de Guardar -->
+    <Button
+        android:id="@+id/btnGuardar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/design_default_color_error"
+        android:text="Guardar"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/edtHora"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

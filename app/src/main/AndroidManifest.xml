@@ -35,7 +35,7 @@
             android:exported="false" /> <!-- MainActivity se abrirá después del login -->
         <activity
             android:name=".MainActivity"
-            android:exported="true" /> <!-- ProcessActivity se abrirá después del MainActivity -->
+            android:exported="false" /> <!-- ProcessActivity se abrirá después del MainActivity -->
         <activity
             android:name=".ProcessActivity"
             android:exported="false" /> <!-- AboutActivity se abrirá después del MainActivity -->
