@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Fondo oscuro para la pantalla -->
+    <color name="black">#000000</color>
+
+    <!-- Color de texto blanco para mejor contraste -->
+    <color name="white">#FFFFFF</color>
+
+    <!-- Color de texto gris claro para el hint (pistas) en los EditText -->
+    <color name="grayLight">#B0B0B0</color>
+
+    <!-- Un gris más oscuro para el texto si se necesita -->
+    <color name="grayDark">#333333</color>
+
+</resources>
