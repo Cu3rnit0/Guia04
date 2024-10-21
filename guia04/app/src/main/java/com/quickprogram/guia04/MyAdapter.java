@@ -52,7 +52,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             Tareas tarea = list.get(position);
 
             Intent intent = new Intent(context, EditTaskActivity.class);
-            intent.putExtra("tarea", tarea);
+            intent.putExtra("tarea", (CharSequence) tarea);
             intent.putExtra("position", position);
             context.startActivity(intent);
         }
