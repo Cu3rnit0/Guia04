@@ -1,6 +1,5 @@
 package com.quickprogram.guia04;
 
-
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
@@ -10,12 +9,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
 
-import static com.quickprogram.guia04.MainActivity.lstTareas;
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import java.util.Calendar;
 import java.util.Locale;
@@ -23,11 +17,12 @@ import java.util.Locale;
 public class AddTaskActivity extends AppCompatActivity {
     Button btnFecha, btnHora, btnGuardar;
     EditText edtTitulo, edtDescripcion, edtFecha, edtHora;
+    private boolean isEdit = false;
+    private int editPosition = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_add_task);
 
         btnFecha = findViewById(R.id.btnFecha);
@@ -38,58 +33,58 @@ public class AddTaskActivity extends AppCompatActivity {
         edtFecha = findViewById(R.id.edtFecha);
         edtHora = findViewById(R.id.edtHora);
 
-        btnHora.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //Obtener la hora actual
-                final Calendar c = Calendar.getInstance();
-                int hour = c.get(Calendar.HOUR_OF_DAY);
-                int minute = c.get(Calendar.MINUTE);
+        // Configurar edición si se trata de editar una tarea
+        Tareas tareaEditada = (Tareas) getIntent().getSerializableExtra("tarea");
+        if (tareaEditada != null) {
+            edtTitulo.setText(tareaEditada.getTitulo());
+            edtDescripcion.setText(tareaEditada.getDescripcion());
+            edtFecha.setText(tareaEditada.getFecha());
+            edtHora.setText(tareaEditada.getHora());
+            isEdit = true;
+            editPosition = getIntent().getIntExtra("position", -1);
+        }
 
-                TimePickerDialog timePickerDialog = new TimePickerDialog(AddTaskActivity.this, new TimePickerDialog.OnTimeSetListener() {
-                    @Override
-                    public void onTimeSet(TimePicker timePicker, int hourofDay, int minute) {
-                        String SelecHora = String.format(Locale.getDefault(), "%02d:%02d", hourofDay, minute);
-                        edtHora.setText(SelecHora);
-                    }
-                }, hour, minute, true);
-                timePickerDialog.show();
-            }
-        });
-        btnFecha.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //Obtener la hora actual
-                final Calendar c = Calendar.getInstance();
-                int day = c.get(Calendar.DAY_OF_MONTH);
-                int month = c.get(Calendar.MONTH);
-                int year = c.get(Calendar.YEAR);
+        // Seleccionar hora
+        btnHora.setOnClickListener(view -> {
+            final Calendar c = Calendar.getInstance();
+            int hour = c.get(Calendar.HOUR_OF_DAY);
+            int minute = c.get(Calendar.MINUTE);
 
-
-                DatePickerDialog datePickerDialog = new DatePickerDialog(AddTaskActivity.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker datePicker, int year, int month, int dayOfMonth) {
-                        String FechaSelec = String.format(Locale.getDefault(), "%02d/%02d/%04d", dayOfMonth, month + 1, year);
-                        edtFecha.setText(FechaSelec);
-                    }
-
-                }, year, month, day);
-                datePickerDialog.show();
-            }
+            TimePickerDialog timePickerDialog = new TimePickerDialog(AddTaskActivity.this, (timePicker, hourOfDay, minute1) -> {
+                String selectedTime = String.format(Locale.getDefault(), "%02d:%02d", hourOfDay, minute1);
+                edtHora.setText(selectedTime);
+            }, hour, minute, true);
+            timePickerDialog.show();
         });
 
-        btnGuardar.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                Tareas tarea = new Tareas();
-                tarea.setTitulo(edtTitulo.getText().toString());
-                tarea.setDescripcion(edtDescripcion.getText().toString());
-                tarea.setFecha(edtFecha.getText().toString());
-                tarea.setHora(edtHora.getText().toString());
-                lstTareas.add(tarea);
-                finish();
-            }
+        // Seleccionar fecha
+        btnFecha.setOnClickListener(view -> {
+            final Calendar c = Calendar.getInstance();
+            int day = c.get(Calendar.DAY_OF_MONTH);
+            int month = c.get(Calendar.MONTH);
+            int year = c.get(Calendar.YEAR);
+
+            DatePickerDialog datePickerDialog = new DatePickerDialog(AddTaskActivity.this, (datePicker, year1, month1, dayOfMonth) -> {
+                String selectedDate = String.format(Locale.getDefault(), "%02d/%02d/%04d", dayOfMonth, month1 + 1, year1);
+                edtFecha.setText(selectedDate);
+            }, year, month, day);
+            datePickerDialog.show();
         });
 
+        // Guardar tarea (nueva o editada)
+        btnGuardar.setOnClickListener(v -> {
+            Tareas tarea = new Tareas();
+            tarea.setTitulo(edtTitulo.getText().toString());
+            tarea.setDescripcion(edtDescripcion.getText().toString());
+            tarea.setFecha(edtFecha.getText().toString());
+            tarea.setHora(edtHora.getText().toString());
+
+            if (isEdit && editPosition != -1) {
+                MainActivity.lstTareas.set(editPosition, tarea);
+            } else {
+                MainActivity.lstTareas.add(tarea);
+            }
+            finish();
+        });
     }
 }
